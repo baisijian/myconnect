@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/baisijian/sensorapi#readme",
   "dependencies": {
+    "connect-multiparty": "^2.0.0",
+    "express": "^4.13.3",
+    "formidable": "^1.0.17",
+    "morgan": "^1.6.1",
     "restify": "^4.0.3",
     "serialport": "^2.0.5"
   }
