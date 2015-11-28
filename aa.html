@@ -21,9 +21,7 @@
     var timeInterval = 1000000;
 
 
-$("#main").on('load', function() {
-    myaction();
-});    
+    
 
     function myaction() {
         $("#main").attr("src", "http://52.64.246.44:3000/aa.jpg?id=" + new Date().getTime());
@@ -43,6 +41,12 @@ $("#main").on('load', function() {
     //     }, timeInterval);
 
     // }
+    function abc(){
+    	$("#main").on('load', function() {
+	    myaction();
+	});
+    	$("#main").attr("src", "http://52.64.246.44:3000/aa.jpg?id=" + new Date().getTime());
+    }
     </script>
 </body>
 
