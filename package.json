@@ -1,0 +1,23 @@
+{
+  "name": "sensorapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baisijian/sensorapi.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baisijian/sensorapi/issues"
+  },
+  "homepage": "https://github.com/baisijian/sensorapi#readme",
+  "dependencies": {
+    "restify": "^4.0.3",
+    "serialport": "^2.0.5"
+  }
+}
