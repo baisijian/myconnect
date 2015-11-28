@@ -6,7 +6,6 @@
 </head>
 
 <body>
-   
     <div>
         <img style="width:100%;-moz-transform:scaleY(-1);
     -webkit-transform:scaleY(-1);
@@ -18,32 +17,30 @@
     <br/>
     <br/>
     <input type="button" style="font-size:40px;width:100%" value="自动刷新 ( 妹妹，这个在wifi下用哦 ) " onclick="abc()">
-    
-    <script>
-    
-    $.ajax({
-	url: 'http://52.64.246.44:3000/aa.jpg',
-	type:'get',
-	datatype:'text',
-	error:function(){
-	alert("Error");
-	},
-	success:function(str,info){
-		alert(1);
-	document.getElementById('main').src='data:image/png;base64,' + encode64(img);
-	}
-	});
-	
-    </script>
     <script type="text/javascript">
     var timeInterval = 1000000;
-    
+
+    function myaction1() {
+        $.ajax({
+            url: 'http://52.64.246.44:3000/aa.jpg?idx='+ new Date().getTime(),
+            type: 'get',
+            datatype: 'text',
+            error: function() {
+                alert("Error");
+            },
+            success: function(str, info) {
+                alert(1);
+                document.getElementById('main').src = 'data:image/png;base64,' + encode64(img);
+            }
+        });
+    }
+
     function myaction() {
         document.getElementById('main').src = "http://52.64.246.44:3000/aa.jpg?id=" + new Date().getTime();
     }
-    
+
     var handler = setInterval(function() {
-        myaction();
+        myaction1();
     }, timeInterval);
 
 
@@ -51,7 +48,7 @@
         timeInterval = 2000;
         clearInterval(handler);
         handler = setInterval(function() {
-            myaction();
+            myaction1();
         }, timeInterval);
 
     }
