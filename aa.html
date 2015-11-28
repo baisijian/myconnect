@@ -20,38 +20,30 @@
     <script type="text/javascript">
     var timeInterval = 1000000;
 
-    function myaction1() {
-        $.ajax({
-            url: 'http://52.64.246.44:3000/aa.jpg?idx='+ new Date().getTime(),
-            type: 'get',
-            datatype: 'text',
-            error: function() {
-                alert("Error");
-            },
-            success: function(str, info) {
-                alert(1);
-                document.getElementById('main').src = 'data:image/png;base64,' + encode64(img);
-            }
-        });
-    }
+
+$("#main").on('load', function() {
+    alert("123");
+    myaction();
+});    
 
     function myaction() {
-        document.getElementById('main').src = "http://52.64.246.44:3000/aa.jpg?id=" + new Date().getTime();
+        $("#main").attr("src", "http://52.64.246.44:3000/aa.jpg?id=" + new Date().getTime());
+        //document.getElementById('main').src = "http://52.64.246.44:3000/aa.jpg?id=" + new Date().getTime();
     }
 
-    var handler = setInterval(function() {
-        myaction1();
-    }, timeInterval);
+    // var handler = setInterval(function() {
+    //     myaction();
+    // }, timeInterval);
 
 
-    function abc() {
-        timeInterval = 2000;
-        clearInterval(handler);
-        handler = setInterval(function() {
-            myaction1();
-        }, timeInterval);
+    // function abc() {
+    //     timeInterval = 2000;
+    //     clearInterval(handler);
+    //     handler = setInterval(function() {
+    //         myaction();
+    //     }, timeInterval);
 
-    }
+    // }
     </script>
 </body>
 
