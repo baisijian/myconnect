@@ -9,6 +9,6 @@ register_openers()
 datagen, headers = multipart_encode({"image1": open("test.jpg", "rb")})
  
 
-request = urllib2.Request("http://localhost:7878/upload", datagen, headers)
+request = urllib2.Request("http://52.64.246.44:7878/upload", datagen, headers)
 
 print urllib2.urlopen(request).read()
